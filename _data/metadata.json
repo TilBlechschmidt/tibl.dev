@@ -15,6 +15,28 @@
 	"author": {
 		"name": "Til Blechschmidt",
 		"email": "til@blechschmidt.de",
-		"url": "https://blechschmidt.dev/about-me/"
+		"url": "https://blechschmidt.dev/about-me/",
+		"social": [
+			{
+				"title": "E-Mail",
+				"icon": "mail",
+				"url": "mailto:til@blechschmidt.de"
+			},
+			{
+				"title": "GitHub",
+				"icon": "github",
+				"url": "https://github.com/TilBlechschmidt"
+			},
+			{
+				"title": "Twitter",
+				"icon": "twitter",
+				"url": "https://twitter.com/TheMegaTB"
+			},
+			{
+				"title": "Telegram",
+				"icon": "send",
+				"url": "https://t.me/TheMegaTB"
+			}
+		]
 	}
 }

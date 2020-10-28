@@ -11,7 +11,9 @@
 	</head>
 	<body>
 		<header>
+			{% if not hideNavigation %}
 			{% include "navigation.njk" %}
+			{% endif %}
 		</header>
 
 		<main{% if templateClass %} class="{{ templateClass }}"{% endif %}>

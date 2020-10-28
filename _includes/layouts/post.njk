@@ -4,10 +4,12 @@ templateClass: tmpl-post
 ---
 
 <div class="prose mx-auto my-16">
-	<h1>{{ title }}</h1>
-	<sup>It will take {{ content | timeToRead }} to read this.</sup>
+	<div class="mx-8">
+		<h1>{{ title }}</h1>
+		<sup>It will take {{ content | timeToRead }} to read this.</sup>
 
-	{{ content | safe }}
+		{{ content | safe }}
+	</div>
 </div>
 
 <hr>

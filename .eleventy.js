@@ -1,15 +1,19 @@
-const { DateTime } = require("luxon");
+const { DateTime } = require('luxon');
+const fs = require('fs');
+const path = require('path');
 
+const feather = require('feather-icons');
 const htmlmin = require('html-minifier');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 const pluginInclusiveLanguage = require('@11ty/eleventy-plugin-inclusive-language');
 const pluginTimeToRead = require('eleventy-plugin-time-to-read');
+const pluginLazyImages = require('eleventy-plugin-lazyimages');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
-const plugins = [pluginInclusiveLanguage, pluginTimeToRead, pluginNavigation, pluginRss];
+const plugins = [pluginInclusiveLanguage, pluginTimeToRead, pluginLazyImages, pluginNavigation, pluginRss];
 
 module.exports = eleventyConfig => {
 	// ---- Configuration options ---- 
@@ -23,7 +27,7 @@ module.exports = eleventyConfig => {
 	eleventyConfig.addWatchTarget('./_tmp/style.css');
 
 	// ---- Passthroughs ---- 
-	eleventyConfig.addPassthroughCopy("img");
+	eleventyConfig.addPassthroughCopy("static");
 	eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' });
 
 	eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -31,6 +35,11 @@ module.exports = eleventyConfig => {
 	// ---- Filters & Shortcodes ---- 
 	eleventyConfig.addShortcode('version', () => {
 		return String(Date.now());
+	});
+
+	eleventyConfig.addShortcode('icon', (name, title) => {
+		const svg = feather.icons[name].toSvg();
+		return `<img src="data:image/svg+xml,${encodeURIComponent(svg)}" style="width: 100%; height: 100%;" alt="${title}" />`;
 	});
 
 	eleventyConfig.addFilter("readableDate", dateObj => {
@@ -56,14 +65,24 @@ module.exports = eleventyConfig => {
 	});
 
 	// ---- Collections ---- 
-	eleventyConfig.addCollection("tagList", function (collection) {
+	eleventyConfig.addCollection("projects", collection => {
+		let projectSet = new Set();
+
+		collection.getAll().forEach(item => {
+			if ("project" in item.data) projectSet.add(item.data.project)
+		});
+
+		return [...projectSet];
+	});
+
+	eleventyConfig.addCollection("tagList", collection => {
 		let tagSet = new Set();
-		collection.getAll().forEach(function (item) {
+		collection.getAll().forEach(item => {
 			if ("tags" in item.data) {
 				let tags = item.data.tags;
 
-				tags = tags.filter(function (item) {
-					switch (item) {
+				tags = tags.filter(tag => {
+					switch (tag) {
 						// this list should match the `filter` list in tags.njk
 						case "all":
 						case "nav":

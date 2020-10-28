@@ -12,7 +12,8 @@
 		".gitignore": true,
 		"yarn.lock": true,
 		".vscode": true,
-		".markdownlint.json": true
+		".markdownlint.json": true,
+		".lazyimages.json": true
 	},
 	"tailwindCSS.includeLanguages": {
 		"Nunjucks": "html"
