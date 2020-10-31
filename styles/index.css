@@ -21,13 +21,35 @@
 	min-height: 331px;
 }
 
-.project-box {
+.box-grid > h2 {
+	@apply mx-8 text-2xl;
+}
+
+@screen md {
+	.box-grid {
+		@apply max-w-4xl mx-auto;
+	}
+
+	.box-grid > h2 {
+		@apply text-4xl;
+	}
+}
+
+.box {
+	@apply bg-white border border-gray-600 rounded p-5 cursor-pointer transition duration-500 transform
+}
+
+.box:hover {
+	@apply shadow-xl -translate-y-1;
+}
+
+/* .project-box {
 	text-decoration: none !important;
 }
 
 .project-box > h3 {
 	margin-top: 0px;
-}
+} */
 
 @responsive {
 	.h-10vh {

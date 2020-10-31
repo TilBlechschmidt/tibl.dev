@@ -32,7 +32,11 @@ module.exports = eleventyConfig => {
 
 	eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
-	// ---- Filters & Shortcodes ---- 
+	// ---- Filters & Shortcodes ----
+	eleventyConfig.addFilter('keys', object => {
+		return Object.keys(object);
+	});
+
 	eleventyConfig.addShortcode('version', () => {
 		return String(Date.now());
 	});
@@ -64,17 +68,7 @@ module.exports = eleventyConfig => {
 		return Math.min.apply(null, numbers);
 	});
 
-	// ---- Collections ---- 
-	eleventyConfig.addCollection("projects", collection => {
-		let projectSet = new Set();
-
-		collection.getAll().forEach(item => {
-			if ("project" in item.data) projectSet.add(item.data.project)
-		});
-
-		return [...projectSet];
-	});
-
+	// ---- Collections ----
 	eleventyConfig.addCollection("tagList", collection => {
 		let tagSet = new Set();
 		collection.getAll().forEach(item => {

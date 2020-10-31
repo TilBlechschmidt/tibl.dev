@@ -1,4 +1,6 @@
 {
 	"title": "WebGrid",
-	"description": "Decentralized, scalable and robust implementation of a selenium-grid equivalent. Based on the WebDriver specification by the W3C."
+	"description": "Decentralized, scalable and robust implementation of a selenium-grid equivalent. Based on the WebDriver specification by the W3C.",
+	"url": "https://webgrid.dev",
+	"abstract": "Decentralized, scalable and robust implementation of a selenium-grid equivalent. Based on the WebDriver specification by the W3C."
 }
