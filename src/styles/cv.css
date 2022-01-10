@@ -1,0 +1,96 @@
+
+@page {
+    margin: 0;
+    size: a4;
+}
+
+.page {
+    @apply my-8 print:my-0 aspect-[210/297] w-[56rem] print:max-w-none mx-auto rounded-xl bg-white shadow-xl print:shadow-none overflow-hidden;
+}
+
+body {
+    -webkit-print-color-adjust: exact;
+    @apply text-justify bg-gray-200;
+
+    background-image: linear-gradient(to right, #ff9966, #ff5e62);
+}
+
+.tracking-extrawide {
+    letter-spacing: 0.15em;
+}
+
+.section {
+    @apply mb-12;
+}
+
+.title {
+    @apply uppercase tracking-extrawide font-medium;
+}
+
+.title:not(.underline) {
+    @apply mb-4;
+}
+
+.title.underline {
+    @apply no-underline pb-4 border-b-2 mb-8;
+}
+
+.heading {
+    @apply uppercase text-sm tracking-wider pb-1;
+}
+
+.content {
+    @apply text-sm font-light text-gray-500;
+}
+
+.label {
+    @apply content italic;
+}
+
+.icon {
+    @apply w-8 mx-auto mb-4;
+}
+
+.contact-details td {
+    border: 0px solid transparent;
+    /* background-clip: padding-box; */
+}
+
+.contact-details tr + tr > td {
+    border-top-width: 1rem;
+}
+
+.contact-details td:first-of-type {
+    @apply align-top w-full heading;
+}
+
+.contact-details td:last-of-type {
+    @apply whitespace-nowrap content;
+}
+
+.column-divider {
+    width: 0.25rem;
+    height: calc(100% - 0.5rem);
+
+    @apply absolute top-0 -left-0.5;
+    @apply rounded-xl mt-2;
+    @apply bg-gradient-to-b from-accent via-blue-200;
+}
+
+.dot {
+    @apply absolute w-3 h-3 -left-1.5 mt-1;
+    @apply bg-accent rounded-full;
+}
+
+.chronology > div {
+    @apply mb-6 flex items-stretch;
+}
+
+.chronology > div > div:first-of-type {
+    @apply w-1 h-auto rounded-full mr-3;
+}
+
+.chronology > div > div.year {
+    @apply uppercase text-sm font-extralight tracking-wider;
+    @apply text-right flex-grow text-gray-500;
+}

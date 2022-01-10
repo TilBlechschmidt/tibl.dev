@@ -1,20 +1,17 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-	purge: {
-		mode: 'layers',
-		content: ['_site/**/*.html'],
-		options: {
-			whitelist: [],
-		},
-	},
-	theme: {
-		extend: {
-			colors: {
-				change: 'black',
-			},
-		},
-	},
-	variants: {},
-	plugins: [
-		require('@tailwindcss/typography')
-	],
+  content: ['./src/**/*.html', './src/**/*.md'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        accent: '#1E88E5',
+      },
+    },
+  },
+  variants: {},
+  plugins: [require('@tailwindcss/typography')],
 };

@@ -1,7 +1,0 @@
-<div class="flex m-4 items-center">
-	{% for social in metadata.author.social %}
-		<a href="{{ social.url }}" class="flex-1 block w-10 h-10 p-2" title="{{ social.title }}">
-			{% icon social.icon, social.title %}
-		</a>
-	{% endfor %}
-</div>

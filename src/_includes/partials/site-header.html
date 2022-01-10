@@ -1,0 +1,33 @@
+<header>
+  <nav class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="/">
+        <figure class="flex flex-shrink-0 items-center space-x-1">
+          <img alt="Portrait of Til Blechschmidt" class="h-8 w-auto rounded-full mr-1" src="/images/cv/portrait.webp" />
+          <figcaption>Til Blechschmidt</figcaption>
+        </figure>
+      </a>
+      <ul class="flex space-x-4">
+        {% for item in navigation.items %}
+        {% if item.url == page.url %}
+        {% assign highlight = 'cursor-default' %}
+        {% assign current = 'aria-current="page"' %}
+        {% else %}
+        {% assign highlight = 'underline' %}
+        {% assign current = '' %}
+        {% endif %}
+        <li>
+          <a href="{{ item.url }}" class="text-base font-bold {{ highlight }}" {{ current }}>
+            {{ item.text }}
+          </a>
+        </li>
+        {% endfor %}
+        <li>
+          <a href="https://github.com/TilBlechschmidt/" class="text-base font-bold underline hover:text-green-900">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,34 +1,103 @@
 {
-	"name": "blechschmidt.dev",
-	"version": "1.0.0",
-	"description": "Personal website",
-	"repository": "https://github.com/TilBlechschmidt/blechschmidt.dev",
-	"author": "Til Blechschmidt <til@blechschmidt.de>",
-	"license": "MIT",
-	"private": true,
-	"scripts": {
-		"start": "eleventy --serve & postcss styles/main.css --o _tmp/style.css --watch",
-		"build": "ELEVENTY_PRODUCTION=true eleventy & NODE_ENV=production postcss styles/main.css --o _site/style.css"
-	},
-	"devDependencies": {
-		"@11ty/eleventy": "^0.11.1",
-		"@11ty/eleventy-navigation": "^0.1.6",
-		"@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
-		"@11ty/eleventy-plugin-rss": "^1.0.9",
-		"@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
-		"@tailwindcss/typography": "^0.2.0",
-		"eleventy-plugin-lazyimages": "^2.1.0",
-		"eleventy-plugin-time-to-read": "^1.0.0",
-		"feather-icons": "^4.28.0",
-		"html-minifier": "^4.0.0",
-		"luxon": "^1.25.0",
-		"markdown-it": "^12.0.2",
-		"markdown-it-anchor": "^6.0.0",
-		"postcss": "^8.1.4",
-		"postcss-clean": "^1.1.0",
-		"postcss-cli": "^8.1.0",
-		"postcss-import": "^13.0.0",
-		"postcss-preset-env": "^6.7.0",
-		"tailwindcss": "^1.9.6"
-	}
+  "name": "11st-starter-kit",
+  "description": "11ty, powered by Snowpack with Tailwind CSS and Alpine.js.",
+  "version": "1.0.0",
+  "engines": {
+    "node": "17.x.x",
+    "npm": "8.x.x"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stefanfrede/11st-starter-kit.git"
+  },
+  "keywords": [
+    "alpinejs",
+    "eleventy",
+    "liquidjs",
+    "netlify",
+    "snowpack",
+    "tailwindcss"
+  ],
+  "author": {
+    "name": "Stefan Frede",
+    "email": "stefan@frede.dev"
+  },
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/stefanfrede/11st-starter-kit/issues"
+  },
+  "homepage": "https://11st-starter-kit.netlify.app",
+  "lint-staged": {
+    "*.{css,html}": "stylelint --fix",
+    "*.{js,html}": "eslint --cache --fix"
+  },
+  "scripts": {
+    "clean": "rimraf src/_site",
+    "preview": "serve --no-clipboard --listen 8086 dist",
+    "dev": "cross-env NODE_ENV=development run-p clean dev:*",
+    "dev:eleventy": "npx @11ty/eleventy --watch",
+    "dev:snowpack": "snowpack dev",
+    "build": "cross-env NODE_ENV=production run-s clean build:*",
+    "build:eleventy": "yarn eleventy",
+    "build:snowpack": "snowpack build",
+    "build:sw": "workbox generateSW",
+    "lint": "run-s lint:*",
+    "lint:eslint": "eslint --ext .js,.html src/",
+    "lint:stylelint": "stylelint src/**/*.html src/**/*.css",
+    "format": "run-s format:*",
+    "format:eslint": "eslint --ext .js,.html src/ --fix",
+    "format:stylelint": "stylelint src/**/*.html src/**/*.css --fix",
+    "validate": "run-s build lint",
+    "setup": "npm install && npm run validate",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/preset-env": "^7.16.5",
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@snowpack/plugin-postcss": "^1.3.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.2.4",
+    "browserslist": "^4.16.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-compat": "^4.0.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.1.2",
+    "markdown-it": "^12.3.2",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-multimd-table": "^4.1.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.14",
+    "postcss-cli": "^9.0.1",
+    "postcss-preset-env": "^7.0.1",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "serve": "^13.0.2",
+    "snowpack": "^3.5.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-no-unsupported-browser-features": "^5.0.2",
+    "stylelint-order": "^5.0.0",
+    "tailwindcss": "^3.0.8",
+    "workbox-cli": "^6.2.4"
+  },
+  "dependencies": {
+    "alpinejs": "^3.0.1",
+    "core-js": "^3.20.2"
+  }
 }
