@@ -8,11 +8,15 @@
     @apply my-8 print:my-0 aspect-[210/297] w-[56rem] print:max-w-none mx-auto rounded-xl bg-white shadow-xl print:shadow-none overflow-hidden;
 }
 
+html, body {
+    @apply min-w-[56rem];
+}
+
 body {
+    background-image: linear-gradient(to right, #f96, #ff5e62);
+    background-repeat: no-repeat;
     -webkit-print-color-adjust: exact;
     @apply text-justify bg-gray-200;
-
-    background-image: linear-gradient(to right, #ff9966, #ff5e62);
 }
 
 .tracking-extrawide {
@@ -21,6 +25,10 @@ body {
 
 .section {
     @apply mb-12;
+}
+
+.section-sidebar {
+    @apply mb-8;
 }
 
 .title {
@@ -52,12 +60,13 @@ body {
 }
 
 .contact-details td {
-    border: 0px solid transparent;
+    border: 0 solid transparent;
+
     /* background-clip: padding-box; */
 }
 
 .contact-details tr + tr > td {
-    border-top-width: 1rem;
+    border-top-width: 0.25rem;
 }
 
 .contact-details td:first-of-type {
@@ -69,8 +78,8 @@ body {
 }
 
 .column-divider {
-    width: 0.25rem;
     height: calc(100% - 0.5rem);
+    width: 0.25rem;
 
     @apply absolute top-0 -left-0.5;
     @apply rounded-xl mt-2;
