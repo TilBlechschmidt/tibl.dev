@@ -1,79 +1,19 @@
-# 📦 11st-Starter-Kit
+# Personal website
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ec6da587-72ba-490a-ad4b-167802a9c197/deploy-status)](https://app.netlify.com/sites/11st-starter-kit/deploys)
+This repository contains the code for my personal website, [blechschmidt.dev](https://blechschmidt.dev).
 
-[11ty](https://www.11ty.dev/), powered by [Snowpack](https://www.snowpack.dev/)
-with [Tailwind CSS](https://tailwindcss.com) and
-[Alpine.js](https://github.com/alpinejs/alpine/).
+You should not take any inspiration from this code as it is mostly just hacked together to get something up and running as opposed to not having anything up at all 😅
 
-## Install Dependencies
+## Development environment
 
-First, make sure you have `npm` (packaged with
-[Node.js](https://nodejs.org)) installed, then run `npm run setup` to install
-the dependencies and validate that everything is running correctly.
-
-## Available Scripts
-
-### Development
+If you decide to play around with it, here is the relevant commands to get you started:
 
 ```bash
-# runs the app in the development mode.
-npm run dev
+yarn install
+yarn dev
+# Yes, that should be it.
 ```
 
-Open http://localhost:8080 to view it in the browser.
+## Deploying to production
 
-The page will reload if you make file changes.
-
-### Production
-
-To increase the production performance builds are optimized via
-[@snowpack/plugin-optimize](https://github.com/pikapkg/snowpack/tree/master/plugins/plugin-optimize).
-
-```bash
-# builds a static copy of your site to the `dist/` folder.
-npm run build
-```
-
-```bash
-# serve the content from the `dist/` folder.
-npm run serve
-```
-
-Open http://localhost:8080 to view it in the browser.
-
-Your code is now ready to be deployed!
-
-## Netlify
-
-To get your own instance of this 11st-Starter-Kit cloned and deploying to
-Netlify very quickly, just click the button below and follow the instructions.
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" />](https://app.netlify.com/start/deploy?repository=https://github.com/stefanfrede/11st-starter-kit)
-
-### Add some Netlify helpers
-
-Netlify Dev adds the ability to use Netlify redirects, proxies, and serverless functions.
-
-```bash
-# install the Netlify CLI in order to get netlify dev
-npm install -g netlify-cli
-
-# run a local server with some added Netlify sugar
-netlify dev
-```
-
-## Code Quality
-
-By default `CSS` and `JavaScript` is getting linted with every commit.
-
-You can lint manually by running `npm run lint` and if errors occur you can try to fix them automatically by running `npm run format`.
-
-With every pull request it is checked if the code can be build without errors and afterwards `CSS` and `JavaScript` is getting linted.
-
-Additionally each page is audited by Lighthouse which can take some time. You can find the performance budget for this audit in the file `./budget.json`.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+This repository builds Docker images automatically through GitHub Actions. See the [Dockerfile](./Dockerfile) for more details on that. The latest image will automagically be deployed to my private K8s cluster.
