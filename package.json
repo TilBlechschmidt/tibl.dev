@@ -3,8 +3,8 @@
   "description": "11ty, powered by Snowpack with Tailwind CSS and Alpine.js.",
   "version": "1.0.0",
   "engines": {
-    "node": "18.x.x",
-    "npm": "8.x.x"
+    "node": "^18 || ^17",
+    "npm": "^8"
   },
   "main": "index.js",
   "repository": {
