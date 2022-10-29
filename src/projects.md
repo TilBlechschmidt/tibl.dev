@@ -2,8 +2,9 @@
 layout: 'layouts/home.html'
 title: 'Projects'
 meta:
+  title: "Project Recap — Software Edition"
   desc:
-    'Something cool!'
+    'A recap of all the personal projects I have worked on in the past. From epic failures over education journeys all the way to some actually decent pieces of software.'
 intro:
   title: 'Project Recap — Software Edition'
   desc:
