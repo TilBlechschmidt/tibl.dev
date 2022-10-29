@@ -4,11 +4,12 @@ title: 'Projects'
 meta:
   title: "Project Recap — Software Edition"
   desc:
-    'A recap of all the personal projects I have worked on in the past. From epic failures over education journeys all the way to some actually decent pieces of software.'
+    'A recap of all the personal projects I have worked on in the past. From epic failures over educational journeys all the way to some actually decent pieces of software.'
 intro:
   title: 'Project Recap — Software Edition'
   desc:
     'I am not going to lie, I like personal projects. A <em>lot</em>.'
+social_image: /images/projects/social-share.png
 ---
 
 So much so in fact that I get distracted by new shiny ones which results in old ones just falling off the back of the queue eventually. Some actually see the light of day and get used in production to some degree or another while others just existed purely for their educational value.
