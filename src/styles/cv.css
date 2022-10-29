@@ -92,7 +92,7 @@ body {
 }
 
 .chronology > div {
-    @apply mb-6 flex items-stretch;
+    @apply mb-3 mt-3 flex items-stretch;
 }
 
 .chronology > div > div:first-of-type {
@@ -102,4 +102,8 @@ body {
 .chronology > div > div.year {
     @apply uppercase text-sm font-extralight tracking-wider;
     @apply text-right flex-grow text-gray-500;
+}
+
+.chronology > hr {
+    @apply mt-4 mb-4;
 }
