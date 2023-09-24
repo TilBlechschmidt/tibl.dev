@@ -1,6 +1,6 @@
 # Personal website
 
-This repository contains the code for my personal website, [blechschmidt.dev](https://blechschmidt.dev).
+This repository contains the code for my personal website, [tibl.dev](https://tibl.dev).
 
 You should not take any inspiration from this code as it is mostly just hacked together to get something up and running as opposed to not having anything up at all 😅
 

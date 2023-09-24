@@ -24,7 +24,7 @@ body {
 }
 
 .section {
-    @apply mb-12;
+    @apply mb-8;
 }
 
 .section-sidebar {
@@ -35,7 +35,11 @@ body {
     @apply uppercase tracking-extrawide font-medium;
 }
 
-.title:not(.underline) {
+.title.tight {
+    @apply mb-2 text-xs;
+}
+
+.title:not(.underline):not(.tight) {
     @apply mb-4;
 }
 

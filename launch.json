@@ -1,0 +1,15 @@
+{
+  "id": "01GQX7XPNYKS1C9RS135DZDSMA",
+  "root": "dist",
+  "name": "Personal page",
+  "domain": "tibl.dev",
+  "compress": [
+    "html",
+    "js",
+    "json",
+    "css",
+    "woff",
+    "woff2"
+  ],
+  "fallback": null
+}
