@@ -42,7 +42,6 @@
     "build": "cross-env NODE_ENV=production run-s clean build:*",
     "build:eleventy": "yarn eleventy",
     "build:snowpack": "snowpack build",
-    "build:sw": "workbox generateSW",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint --ext .js,.html src/",
     "lint:stylelint": "stylelint src/**/*.html src/**/*.css",
@@ -93,8 +92,7 @@
     "stylelint-config-standard": "^24.0.0",
     "stylelint-no-unsupported-browser-features": "^5.0.2",
     "stylelint-order": "^5.0.0",
-    "tailwindcss": "^3.0.8",
-    "workbox-cli": "^6.2.4"
+    "tailwindcss": "^3.0.8"
   },
   "dependencies": {
     "alpinejs": "^3.0.1",
